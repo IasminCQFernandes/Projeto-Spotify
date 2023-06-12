@@ -101,7 +101,7 @@ let musicas = [
     },
 ];
 
-// Variáveis para armazenar os dados da minha página HTML
+//VARIAVEIS PARA ARMAZENAR OS DADOS DA MINHA PAG. HTML
 let musica = document.querySelector('audio');
 let indexMusica = 0;
 
@@ -114,35 +114,39 @@ renderizarMusica(indexMusica);
 
 // Eventos
 
-// PLAY
+//PLAY
 document.querySelector('.botao-play').addEventListener('click', tocarMusica);
 
-// PAUSE
+//PAUSE
 document.querySelector('.botao-pause').addEventListener('click', pausarMusica);
 
-// BARRA ACOMPANHAR A DURAÇÃO DA MÚSICA
+//BARRA ACOMPANHAR A DURAÇÃO DA MUSICA
 musica.addEventListener('timeupdate', atualizarBarra);
 
-// VOLTAR MÚSICAS
+//VOLTAR MUSICAS
 document.querySelector('.anterior').addEventListener('click', () => {
     indexMusica--;
     if (indexMusica < 0) {
-        indexMusica = musicas.length - 1;
+        indexMusica = 14;
     }
     renderizarMusica(indexMusica);
 });
 
-// PRÓXIMA MÚSICA
+//PROXIMA MUSICA
 document.querySelector('.proximo').addEventListener('click', () => {
-    avancarParaProximaMusica();
+    indexMusica++;
+    if (indexMusica > 14){
+        indexMusica = 0;
+    }
+    renderizarMusica(indexMusica);
 });
 
 // Funções
 
-// TROCAR NOME DA MÚSICA, IMAGEM DO CANTOR E NOME DO CANTOR
-function renderizarMusica(index) {
+//TROCAR NOME DA MUSICA, IMAGEM DO CANTOR E NOME DO CANTOR
+function renderizarMusica(index){
     musica.setAttribute('src', musicas[index].src);
-    musica.addEventListener('loadeddata', () => { // CARREGAR
+    musica.addEventListener('loadeddata', () => { //CARREGAR
         nomeMusica.textContent = musicas[index].titulo;
         nomeArtista.textContent = musicas[index].artista;
         imagem.src = musicas[index].img;
@@ -150,38 +154,35 @@ function renderizarMusica(index) {
     });
 }
 
-// DAR PLAY E TROCAR BOTÃO
-function tocarMusica() {
+//DAR PLAY E TROCAR BOTAO
+function tocarMusica(){
     musica.play();
     document.querySelector('.botao-pause').style.display = 'block';
     document.querySelector('.botao-play').style.display = 'none';
 }
 
-// DAR PAUSE E TROCAR BOTÃO
-function pausarMusica() {
+//DAR PAUSE E TROCAR BOTAO
+function pausarMusica(){
     musica.pause();
     document.querySelector('.botao-pause').style.display = 'none';
     document.querySelector('.botao-play').style.display = 'block';
 }
 
-// FAZER BARRA CORRER COM A MÚSICA
-function atualizarBarra() {
+//FAZER BARRA CORRER COM A MUSICA
+function atualizarBarra(){
     let barra = document.querySelector('progress');
     barra.style.width = Math.floor((musica.currentTime / musica.duration) * 100) + '%';
     let tempoDecorrido = document.querySelector('.inicio');
     tempoDecorrido.textContent = segundosParaMinutos(Math.floor(musica.currentTime));
 }
 
-// TRANSFORMAR SEG. P/ MIN
-function segundosParaMinutos(segundos) {
+//TRANSFORMAR SEG. P/ MIN
+function segundosParaMinutos(segundos){
     let campoMinutos = Math.floor(segundos / 60);
     let campoSegundos = segundos % 60;
-    if (campoSegundos < 10) {
+    if (campoSegundos < 10){
         campoSegundos = '0' + campoSegundos;
     }
 
-    return campoMinutos + ':' + campoSegundos;
+    return campoMinutos+':'+campoSegundos;
 }
-
-// AVANÇAR PARA A PRÓXIMA MÚSICA
-function avancarParaProximaMusica()
