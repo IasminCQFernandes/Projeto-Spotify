@@ -184,4 +184,4 @@ function segundosParaMinutos(segundos) {
 }
 
 // AVANÇAR PARA A PRÓXIMA MÚSICA
-function avancarParaProximaMusica
+function avancarParaProximaMusica()
