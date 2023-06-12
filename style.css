@@ -1,0 +1,112 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+    
+}
+
+body{
+    height: 100vh;
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    background-image: url(image/background1.gif);
+    color: #fff;
+}
+
+.corpo{
+    background-color: rgba(0, 0, 0, 0.459);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 90%;
+
+}
+.artista{
+    width: 90%;
+    margin: 2%;
+}
+
+.descricao{
+    width: 90%;
+
+}
+.descricao h2{
+    margin-bottom: 2%;
+}
+
+.duracao{
+    width: 90%;
+    margin-top: 10%;
+}
+.barra{
+    width: 100%;
+    height: 10px;
+    border: 1px solid #eeeeee8a;
+    border-radius: 5px;
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+progress{
+    width: 0;
+    height: 6px;
+    background-color: #333;
+}
+
+.ponto{
+    width: 20px;
+    height: 20px;
+    background-color: #fff;
+    border-radius: 50%;
+    margin-left: -2px;
+}
+
+.tempo{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 3%;
+}
+.player{
+    width: 90%;
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin-bottom: 5%;
+}
+.player img{
+    width: 15%;
+}
+.botao-pause{
+    display: none;
+}
+/* 
+@media (min-width:1024px) {
+    .descricao h2{
+        font-size: 3em;
+    }
+    .descricao i{
+        font-size: 2em;
+    }
+
+    .barra{
+
+        height: 15px;}
+    progress{
+        width: 50%;
+        height: 10px;
+        background-color: #333;
+    }
+
+    .tempo{
+        font-size: 1.5em;
+    }
+} */
