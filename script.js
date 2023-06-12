@@ -1,3 +1,4 @@
+//MINHAS MUSICAS FAVORITAS
 let musicas = [
     {
         titulo: 'Burn',
@@ -56,9 +57,51 @@ let musicas = [
         src:'music/KALEO-WayDownWeGo.mp3',
         img:'image/kaleo.jpg'
     },
+
+    {
+        titulo: 'Rescue',
+        artista: 'Lauren Daigle',
+        src:'music/LaurenDaigle-Rescue.mp3',
+        img:'image/lauren.jpg'
+    },
+
+    {
+        titulo: 'Little Lion Man',
+        artista: 'Mumford $ Sons',
+        src:'music/LittleLionMan.mp3',
+        img:'image/Little-lion-man.jpg'
+    },
+
+    {
+        titulo: 'Stay',
+        artista: 'Rihanna',
+        src:'music/Rihanna-Stay.mp3',
+        img:'image/stay- rihanna.jpg'
+    },
+
+    {
+        titulo: 'Riptide',
+        artista: 'Vance Joy',
+        src:'music/Riptide.mp3',
+        img:'image/vance-joy-riptide.jfif'
+    },
+
+    {
+        titulo: 'Straight and Narrow',
+        artista: 'Sam Barber',
+        src:'music/SamBarber-StraightAndNarrow.mp3',
+        img:'image/sam-barber.jfif'
+    },
+
+    {
+        titulo: 'Ho Hey',
+        artista: 'The Lumineers',
+        src:'music/TheLumineers-HoHey.mp3',
+        img:'image/the-luminners.jpg'
+    },
 ];
 
-
+//VARIAVEIS PARA ARMAZENAR OS DADOS DA MINHA PAG. HTML
 let musica = document.querySelector('audio');
 let indexMusica = 0;
 
@@ -70,32 +113,40 @@ let nomeArtista = document.querySelector('.descricao i');
 renderizarMusica(indexMusica);
 
 // Eventos
+
+//PLAY
 document.querySelector('.botao-play').addEventListener('click', tocarMusica);
 
+//PAUSE
 document.querySelector('.botao-pause').addEventListener('click', pausarMusica);
 
+//BARRA ACOMPANHAR A DURAÇÃO DA MUSICA
 musica.addEventListener('timeupdate', atualizarBarra);
 
+//VOLTAR MUSICAS
 document.querySelector('.anterior').addEventListener('click', () => {
     indexMusica--;
     if (indexMusica < 0) {
-        indexMusica = 2;
+        indexMusica = 14;
     }
     renderizarMusica(indexMusica);
 });
 
+//PROXIMA MUSICA
 document.querySelector('.proximo').addEventListener('click', () => {
     indexMusica++;
-    if (indexMusica > 2){
+    if (indexMusica > 14){
         indexMusica = 0;
     }
     renderizarMusica(indexMusica);
 });
 
 // Funções
+
+//TROCAR NOME DA MUSICA, IMAGEM DO CANTOR E NOME DO CANTOR
 function renderizarMusica(index){
     musica.setAttribute('src', musicas[index].src);
-    musica.addEventListener('loadeddata', () => {
+    musica.addEventListener('loadeddata', () => { //CARREGAR
         nomeMusica.textContent = musicas[index].titulo;
         nomeArtista.textContent = musicas[index].artista;
         imagem.src = musicas[index].img;
@@ -103,18 +154,21 @@ function renderizarMusica(index){
     });
 }
 
+//DAR PLAY E TROCAR BOTAO
 function tocarMusica(){
     musica.play();
     document.querySelector('.botao-pause').style.display = 'block';
     document.querySelector('.botao-play').style.display = 'none';
 }
 
+//DAR PAUSE E TROCAR BOTAO
 function pausarMusica(){
     musica.pause();
     document.querySelector('.botao-pause').style.display = 'none';
     document.querySelector('.botao-play').style.display = 'block';
 }
 
+//FAZER BARRA CORRER COM A MUSICA
 function atualizarBarra(){
     let barra = document.querySelector('progress');
     barra.style.width = Math.floor((musica.currentTime / musica.duration) * 100) + '%';
@@ -122,6 +176,7 @@ function atualizarBarra(){
     tempoDecorrido.textContent = segundosParaMinutos(Math.floor(musica.currentTime));
 }
 
+//TRANSFORMAR SEG. P/ MIN
 function segundosParaMinutos(segundos){
     let campoMinutos = Math.floor(segundos / 60);
     let campoSegundos = segundos % 60;
