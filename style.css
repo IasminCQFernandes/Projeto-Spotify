@@ -88,25 +88,61 @@ progress{
 .botao-pause{
     display: none;
 }
-/* 
+
 @media (min-width:1024px) {
-    .descricao h2{
-        font-size: 3em;
+
+    body {
+        padding: 5%;
+        height: auto;
     }
-    .descricao i{
+
+    .corpo {
+
+        margin-top: 5%;
+
+    }
+
+    .descricao h2 {
+
         font-size: 2em;
+
     }
 
-    .barra{
+    .artista {
 
-        height: 15px;}
-    progress{
         width: 50%;
-        height: 10px;
-        background-color: #333;
+        height: 400px;
+        margin: 2%;
+
     }
 
-    .tempo{
-        font-size: 1.5em;
+
+    .descricao i {
+
+        font-size: 2em;
+
     }
-} */
+
+    .barra {
+
+
+        height: 15px;
+    }
+
+    progress {
+
+        width: 50%;
+
+        height: 10px;
+
+        background-color: #333;
+
+    }
+
+    .tempo {
+
+        font-size: 1.5em;
+
+    }
+
+}
