@@ -106,7 +106,7 @@ let musica = document.querySelector('audio');
 let indexMusica = 0;
 
 let duracaoMusica = document.querySelector('.fim');
-let imagem = document.querySelector('img');
+let imagem = document.querySelector('.corpo img');
 let nomeMusica = document.querySelector('.descricao h2');
 let nomeArtista = document.querySelector('.descricao i');
 
