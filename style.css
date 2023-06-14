@@ -1,212 +1,268 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: sans-serif;
-  }
-  ::-webkit-scrollbar {
-    width: 8px;
-  }
-  ::-webkit-scrollbar-track {
-    background-color: #2c2c31;
-  }
-  ::-webkit-scrollbar-thumb {
-    background-color: #9e9ea0;
-  }
-  
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background-color: #2c2c31;
+}
+::-webkit-scrollbar-thumb {
+  background-color: #9e9ea0;
+}
+
+.menuDesktop {
+  grid-area: menu;
+  overflow-y: scroll;
+  animation: enter 1.5s ease-in-out;
+
+  border-right: 1px solid rgba(169, 169, 169, 0.541);
+  margin-right: 10%;
+
+  background-color: rgba(0, 0, 0, 0.459);
+  padding-left: 1%;
+}
+.menuMusicas {
+  display: flex;
+  border-bottom: 1px solid rgba(169, 169, 169, 0.541);
+  padding-bottom: 5%;
+}
+.menuMusicas img {
+  width: 30%;
+  max-height: 100px;
+  border-radius: 50%;
+  padding-top: 2%;
+}
+.menuDescricao {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 2%;
+}
+
+body {
+  width: 100%;
+
+  display: grid;
+  grid-template-areas: "menu player";
+  grid-template-columns: 1fr 2fr;
+  grid-template-rows: 100vh;
+
+  background-image: url(image/background1.gif);
+  color: #fff;
+}
+
+.corpo {
+  grid-area: player;
+
+  background-color: rgba(0, 0, 0, 0.459);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 70%;
+  height: 80vh;
+}
+.artista {
+  width: 90%;
+  margin: 2%;
+}
+
+.descricao {
+  width: 90%;
+}
+.descricao h2 {
+  margin-bottom: 2%;
+}
+
+.duracao {
+  width: 90%;
+  margin-top: 10%;
+}
+.barra {
+  width: 100%;
+  height: 10px;
+  border: 1px solid #eeeeee8a;
+  border-radius: 5px;
+
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+progress {
+  width: 0;
+  height: 6px;
+  background-color: #333;
+}
+
+.ponto {
+  width: 20px;
+  height: 20px;
+  background-color: #fff;
+  border-radius: 50%;
+  margin-left: -2px;
+}
+
+.tempo {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 3%;
+}
+.player {
+  width: 90%;
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin-bottom: 5%;
+}
+.player img {
+  width: 15%;
+}
+.botao-pause {
+  display: none;
+}
+
+@media (max-width: 700px) {
   .menuDesktop {
-    grid-area: menu;
-    overflow-y: scroll;
-    animation: enter 1.5s ease-in-out;
-  
-    border-right: 1px solid rgba(169, 169, 169, 0.541);
-    margin-right: 10%;
-  
-    background-color: rgba(0, 0, 0, 0.459);
+    display: none;
   }
-  .menuMusicas {
-    display: flex;
-    border-bottom: 1px solid rgba(169, 169, 169, 0.541);
-    padding-bottom: 5%;
-  }
-  .menuMusicas img {
-    width: 30%;
-    max-height: 100px;
-    border-radius: 50%;
-  }
-  .menuDescricao {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: 2%;
-  }
-  
   body {
-    width: 100%;
-  
-    display: grid;
-    grid-template-areas: "menu player";
-    grid-template-columns: 1fr 2fr;
-    grid-template-rows: 100vh;
-  
-    background-image: url(image/background1.gif);
-    color: #fff;
-  }
-  
-  .corpo {
-    grid-area: player;
-  
-    background-color: rgba(0, 0, 0, 0.459);
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+  }
+  .corpo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
     width: 80%;
     height: 100vh;
   }
+
   .artista {
-    width: 90%;
+    width: 60%;
     margin: 2%;
   }
-  
   .descricao {
     width: 90%;
   }
-  .descricao h2 {
-    margin-bottom: 2%;
-  }
-  
+
   .duracao {
     width: 90%;
-    margin-top: 10%;
+    margin-top: 5%;
   }
   .barra {
     width: 100%;
     height: 10px;
     border: 1px solid #eeeeee8a;
     border-radius: 5px;
-  
+
     display: flex;
     align-items: center;
     justify-content: flex-start;
   }
-  
+}
+
+@media (min-width: 765px) {
+  .corpo {
+    padding: 5%;
+    height: 100vh;
+    width: 90%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .artista {
+    width: 60%;
+    height: 300px;
+    margin: 2%;
+  }
+  .duracao {
+    margin-top: 2%;
+  }
+}
+
+@media (min-width: 1024px) {
+  body {
+    height: 95vh;
+  }
+  .duracao {
+    margin-top: 2%;
+  }
+
+  .descricao h2 {
+    font-size: 2em;
+  }
+
+  .artista {
+    width: 50%;
+    height: 400px;
+    margin: 2%;
+  }
+
+  .descricao i {
+    font-size: 1.5em;
+  }
+
+  .barra {
+    height: 15px;
+  }
+
   progress {
-    width: 0;
-    height: 6px;
+    width: 50%;
+
+    height: 10px;
+
     background-color: #333;
   }
-  
-  .ponto {
-    width: 20px;
-    height: 20px;
-    background-color: #fff;
-    border-radius: 50%;
-    margin-left: -2px;
-  }
-  
+
   .tempo {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 3%;
+    font-size: 1.5em;
   }
-  .player {
-    width: 90%;
-    display: flex;
-    gap: 10px;
-    justify-content: center;
-    margin-bottom: 5%;
+}
+
+@media (min-width: 1200px) {
+  body {
+    height: 100vh;
   }
-  .player img {
-    width: 15%;
+  .duracao {
+    margin-top: 2%;
   }
-  .botao-pause {
-    display: none;
+
+  .descricao h2 {
+    font-size: 2em;
   }
-  
-  @media (max-width: 700px) {
-    .menuDesktop {
-      display: none;
-    }
-    body {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-    }
-  
-    .artista {
-      width: 60%;
-      margin: 2%;
-    }
-    .descricao {
-      width: 90%;
-    }
-  
-    .duracao {
-      width: 90%;
-      margin-top: 5%;
-    }
-    .barra {
-      width: 100%;
-      height: 10px;
-      border: 1px solid #eeeeee8a;
-      border-radius: 5px;
-  
-      display: flex;
-      align-items: center;
-      justify-content: flex-start;
-    }
+
+  .artista {
+    width: 60%;
+    height: 200px;
+    margin: 2%;
   }
-  
-  @media (min-width: 769px) {
-    .corpo {
-      padding: 5%;
-      height: 90vh;
-  
-      margin: auto;
-    }
-    .artista {
-      width: 60%;
-      height: 300px;
-      margin: 2%;
-    }
+
+  .descricao i {
+    font-size: 1.5em;
   }
-  @media (min-width: 1024px) {
-    body {
-      padding: 2%;
-      height: auto;
-      position: fixed;
-    }
-  
-    .descricao h2 {
-      font-size: 2em;
-    }
-  
-    .artista {
-      width: 70%;
-      height: 400px;
-      margin: 2%;
-    }
-  
-    .descricao i {
-      font-size: 2em;
-    }
-  
-    .barra {
-      height: 15px;
-    }
-  
-    progress {
-      width: 50%;
-  
-      height: 10px;
-  
-      background-color: #333;
-    }
-  
-    .tempo {
-      font-size: 1.5em;
-    }
+
+  .barra {
+    height: 15px;
   }
-  
+
+  progress {
+    width: 50%;
+
+    height: 10px;
+
+    background-color: #333;
+  }
+
+  .tempo {
+    font-size: 1.5em;
+  }
+}
