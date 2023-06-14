@@ -1,52 +1,174 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Player</title>
 
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous"/>
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+      integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm"
+      crossorigin="anonymous"
+    />
 
-    <link rel="shortcut icon" href="image/favicon.png" type="image/png">
+    <link rel="shortcut icon" href="image/favicon.png" type="image/png" />
 
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <aside class="menuDesktop">
+      <div class="menuMusicas">
+        <img src="image/david-kushner.jpg" alt="" />
+
+        <div class="menuDescricao">
+          <h2>Burn</h2>
+          <i>David Kushner</i>
+        </div>
+      </div>
+
+      <div class="menuMusicas">
+        <img src="image/david-kushner.jpg" alt="" />
+
+        <div class="menuDescricao">
+          <h2>Daylight</h2>
+          <i>David Kushner</i>
+        </div>
+      </div>
+
+      <div class="menuMusicas">
+        <img src="image/david-kushner.jpg" alt="" />
+
+        <div class="menuDescricao">
+          <h2>Miserable Man</h2>
+          <i>David Kushner</i>
+        </div>
+      </div>
+
+      <div class="menuMusicas">
+        <img src="image/david-kushner.jpg" alt="" />
+
+        <div class="menuDescricao">
+          <h2>Mr. Forgettable</h2>
+          <i>David Kushner</i>
+        </div>
+      </div>
+      <div class="menuMusicas">
+        <img src="image/benson-boone.jpg" alt="" />
+
+        <div class="menuDescricao">
+          <h2>In the Stars</h2>
+          <i>Benson Boone</i>
+        </div>
+      </div>
+
+      <div class="menuMusicas">
+        <img src="image/lauren.jpg" alt="" />
+
+        <div class="menuDescricao">
+          <h2>Rescue</h2>
+          <i>Lauren Daigle</i>
+        </div>
+      </div>
+
+      <div class="menuMusicas">
+        <img src="image/Little-lion-man.jpg" alt="" />
+
+        <div class="menuDescricao">
+          <h2>Little Lion Man</h2>
+          <i>Mumford & Sons</i>
+        </div>
+      </div>
+
+      <div class="menuMusicas">
+        <img src="image/stay- rihanna.jpg" alt="" />
+
+        <div class="menuDescricao">
+          <h2>Stay</h2>
+          <i>Rihanna</i>
+        </div>
+      </div>
+
+      <div class="menuMusicas">
+          <img src="image/vance-joy-riptide.jfif" alt="" />
+  
+          <div class="menuDescricao">
+            <h2>Riptide</h2>
+            <i>Vance Joy</i>
+          </div>
+      </div>
+
+      <div class="menuMusicas">
+        <img src="image/sam-barber.jfif" alt="" />
+
+        <div class="menuDescricao">
+          <h2>Riptide</h2>
+          <i>Sam Barber</i>
+        </div>
+     </div>
+
+     <div class="menuMusicas">
+      <img src="image/the-luminners.jpg" alt="" />
+
+        <div class="menuDescricao">
+          <h2>Ho Hey</h2>
+          <i>The Luminners</i>
+        </div>
+      </div>
+
+      <div class="menuMusicas">
+        <img src="image/flora-cash.jpg" alt="" />
+  
+          <div class="menuDescricao">
+            <h2>You're Somebody Else</h2>
+            <i>Flora Cash</i>
+          </div>
+      </div>
+
+      <div class="menuMusicas">
+        <img src="image/alexander23.jpg" alt="" />
+  
+          <div class="menuDescricao">
+            <h2>IDK You Yet</h2>
+            <i>Alexander 23</i>
+          </div>
+      </div>
+    </div>
+    </aside>
+
     <div class="corpo">
-        <img src="image/alexander23.jpg" class="artista">
+      <img src="image/alexander23.jpg" class="artista" />
 
-        <div class="descricao">
-            <h2>Nome da música</h2>
-            <i>Nome do artista</i>
+      <div class="descricao">
+        <h2>Nome da música</h2>
+        <i>Nome do artista</i>
+      </div>
+
+      <div class="duracao">
+        <div class="barra">
+          <progress value="0" max="1"></progress>
+
+          <div class="ponto"></div>
         </div>
 
-        <div class="duracao">
-            <div class="barra">
-                <progress value="0" max="1"></progress>
-
-                <div class="ponto">
-
-                </div>
-            </div>
-
-            <div class="tempo">
-                <p class="inicio">0:00</p>
-                <p class="fim">3:42</p>
-            </div>
+        <div class="tempo">
+          <p class="inicio">0:00</p>
+          <p class="fim">3:42</p>
         </div>
+      </div>
 
-        <div class="player">
-        
-            <img src="image/back.png" alt="voltar musica" class="anterior">
-            <img src="image/play.png" alt="play" class="botao-play">
-            <img src="image/pause.png" alt="pause" class="botao-pause">
-            <img src="image/next.png" alt="proxima musica" class="proximo">
+      <div class="player">
+        <img src="image/back.png" alt="voltar musica" class="anterior" />
+        <img src="image/play.png" alt="play" class="botao-play" />
+        <img src="image/pause.png" alt="pause" class="botao-pause" />
+        <img src="image/next.png" alt="proxima musica" class="proximo" />
+      </div>
 
-        </div>
-
-        <audio src="music/idk you yet - alexander 23 (slowed + reverb) (128 kbps).mp3"></audio>
+      <audio
+        src="music/idk you yet - alexander 23 (slowed + reverb) (128 kbps).mp3"
+      ></audio>
     </div>
 
     <script src="script.js"></script>
-</body>
+  </body>
 </html>
