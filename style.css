@@ -65,6 +65,7 @@ body {
   justify-content: center;
   width: 70%;
   height: 80vh;
+  margin: auto;
 }
 .artista {
   width: 90%;
@@ -125,73 +126,74 @@ progress {
 .botao-pause {
   display: none;
 }
-
-@media (max-width: 700px) {
-  .menuDesktop {
-    display: none;
-  }
+@media (min-width: 1200px) {
   body {
+    height: 100vh;
+  }
+  .menuMusicas img {
+    width: 40%;
+    max-height: 200px;
+    border-radius: 50%;
+    padding-top: 2%;
+  }
+  .menuDescricao {
     display: flex;
     flex-direction: column;
-    align-items: center;
     justify-content: center;
+    padding: 2%;
   }
-  .corpo {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    width: 80%;
-    height: 100vh;
+  .menuDescricao h2 {
+    font-size: 1.5em;
   }
-
-  .artista {
-    width: 60%;
-    margin: 2%;
-  }
-  .descricao {
-    width: 90%;
-  }
-
-  .duracao {
-    width: 90%;
-    margin-top: 5%;
-  }
-  .barra {
-    width: 100%;
-    height: 10px;
-    border: 1px solid #eeeeee8a;
-    border-radius: 5px;
-
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-  }
-}
-
-@media (min-width: 765px) {
-  .corpo {
-    padding: 5%;
-    height: 100vh;
-    width: 90%;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  .artista {
-    width: 60%;
-    height: 300px;
-    margin: 2%;
+  .menuDescricao i {
+    font-size: 1.3em;
   }
   .duracao {
     margin-top: 2%;
+  }
+  .corpo {
+    height: 80vh;
+
+    margin: auto;
+  }
+
+  .descricao h2 {
+    font-size: 2em;
+  }
+
+  .artista {
+    width: 40%;
+    height: 200px;
+    margin: auto;
+  }
+
+  .descricao i {
+    font-size: 1.5em;
+  }
+
+  .barra {
+    height: 15px;
+  }
+
+  progress {
+    width: 50%;
+
+    height: 10px;
+
+    background-color: #333;
+  }
+
+  .tempo {
+    font-size: 1.5em;
   }
 }
 
 @media (min-width: 1024px) {
   body {
-    height: 95vh;
+    height: 100vh;
+  }
+  .corpo {
+    height: 80vh;
   }
   .duracao {
     margin-top: 2%;
@@ -199,6 +201,24 @@ progress {
 
   .descricao h2 {
     font-size: 2em;
+  }
+  .menuMusicas img {
+    width: 40%;
+    max-height: 200px;
+    border-radius: 50%;
+    padding-top: 2%;
+  }
+  .menuDescricao {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 2%;
+  }
+  .menuDescricao h2 {
+    font-size: 1.5em;
+  }
+  .menuDescricao i {
+    font-size: 1.3em;
   }
 
   .artista {
@@ -228,41 +248,107 @@ progress {
   }
 }
 
-@media (min-width: 1200px) {
-  body {
-    height: 100vh;
+@media (min-width: 765px) {
+  .menuMusicas img {
+    width: 30%;
+    max-height: 80px;
+    border-radius: 50%;
+    padding-top: 2%;
+  }
+  .menuDescricao {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 2%;
+  }
+  .menuDescricao h2 {
+    font-size: 1.3em;
+  }
+  .menuDescricao i {
+    font-size: 1em;
+  }
+  .corpo {
+    padding: 5%;
+    height: 80vh;
+    width: 90%;
+  }
+  .artista {
+    width: 60%;
+    height: 300px;
+    margin: 2%;
   }
   .duracao {
     margin-top: 2%;
   }
+}
 
-  .descricao h2 {
-    font-size: 2em;
+@media (max-width: 450px) {
+  .menuDesktop {
+    display: block;
+  }
+
+  body {
+    width: 100%;
+
+    display: block;
+  }
+
+  .menuDesktop {
+    position: absolute;
+    bottom: 0;
+    overflow-y: scroll;
+    animation: enter 1.5s ease-in-out;
+    height: 25vh;
+    width: 100%;
+
+    box-shadow: 2px 2px 5px lightgray;
+  }
+  .menuMusicas img {
+    width: 20%;
+    max-height: 100px;
+    border-radius: 50%;
+    padding-top: 2%;
+  }
+  .menuDescricao {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 2%;
+  }
+  .menuDescricao h2 {
+    font-size: 1.5em;
+  }
+  .menuDescricao i {
+    font-size: 1.3em;
+  }
+
+  .corpo {
+    margin: auto;
+    width: 80%;
+    height: 70vh;
   }
 
   .artista {
     width: 60%;
-    height: 200px;
     margin: 2%;
   }
-
-  .descricao i {
-    font-size: 1.5em;
+  .descricao {
+    width: 90%;
   }
 
+  .duracao {
+    width: 90%;
+    margin-top: 5%;
+  }
   .barra {
-    height: 15px;
-  }
-
-  progress {
-    width: 50%;
-
+    width: 100%;
     height: 10px;
+    border: 1px solid #eeeeee8a;
+    border-radius: 5px;
 
-    background-color: #333;
-  }
-
-  .tempo {
-    font-size: 1.5em;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
   }
 }
+
